@@ -1,0 +1,18 @@
+.container {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  .item {
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    padding: 20px;
+    cursor: pointer;
+  }
+}

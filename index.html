@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebOfficeDemo</title>
+    <script src="./src/webOfficeSdk/web-office-sdk-solution-v1.1.27.umd.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      console.log("引入后可以开始使用 jssdk 了！");
+      console.log(WebOfficeSDK);
+      window.addEventListener("click", () => {
+        console.log("window click");
+      });
+      // window.officeSdk = WebOfficeSDK
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

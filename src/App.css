@@ -1,0 +1,17 @@
+/* .web-office-default-container{
+  width: 50vw !important;
+  height: 100vh;
+}
+.web-office-iframe {
+  width: 50vw !important;
+  height: 100vh;
+}
+.page-container {
+  width: 100% !important;
+} */
+.web-office-iframe {
+  /* width: 70vw !important;
+  height: calc(100vh - 100px) !important;
+  margin-top: 40px !important; */
+}
+

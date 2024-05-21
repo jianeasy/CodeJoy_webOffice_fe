@@ -1,0 +1,17 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+  .left {
+    width: 30vw;
+    height: 100vh;
+    background-color: antiquewhite;
+  }
+  .right {
+    width: 70vw;
+    height: 100vh;
+  }
+}
