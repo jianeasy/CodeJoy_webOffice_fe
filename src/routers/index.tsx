@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import WebOfficePage1 from "../pages/WebOfficePage1";
+import WebOfficePage1 from "../pages/WebOfficePage";
 import Home from "../pages/Home";
 const router = createBrowserRouter([
   {

@@ -2,9 +2,9 @@ import React, { useLayoutEffect, useState } from "react";
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import WebOfficePage from "./pages/WebOfficePage";
-import WebOfficePage1 from "./pages/WebOfficePage1";
+import WebOfficePage1 from "./pages/WebOfficePage";
 import Header from "./components/Header";
-import { page1, page2, page5 } from "./pages/WebOfficePage1/FillForm/data";
+import { page1, page2, page5 } from "./pages/WebOfficePage/FillForm/data";
 import router from "./routers";
 function App() {
   const list = [
