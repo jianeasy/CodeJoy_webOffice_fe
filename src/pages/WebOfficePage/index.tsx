@@ -5,7 +5,7 @@ import _ from "lodash";
 import FillForm from "./FillForm";
 import data, { page1 } from "./FillForm/data";
 import { Form } from "antd";
-
+import { pdf2Docx } from '../../request/api'
 function flatten(arr) {
   return arr.reduce(
     (acc, val) =>
@@ -42,7 +42,7 @@ let tableData = [
 
 export default (props: any) => {
   const webOfficeContainerRef = useRef(null);
-  const [fileId, setFileId] = useState("ac18af34a6a64b069a424b05056cac38");
+  const [fileId, setFileId] = useState("e90e73df706d4aba93fb6fced2970fb6");
   const [fieldList, setfieldList] = useState(flatten(page1));
   const [fileName, setFileName] = useState("test.docx");
   const webOfficeConfig = {
@@ -52,7 +52,6 @@ export default (props: any) => {
     token: "1",
   };
   const [formObj] = Form.useForm();
-  const ref = React.createRef<any>();
   const [app, setApp] = useState<any>(null);
   const [instance, setInstance] = useState<any>(null);
   const [pageNum, setPageNum] = useState(1);
@@ -91,7 +90,7 @@ export default (props: any) => {
 
       //   replaceText(inst?.Application, begin, end, text);
     }, 1000);
-    inst.ApiEvent.AddApiEventListener("WindowSelectionChange", handleApiEvent);
+    // inst.ApiEvent.AddApiEventListener("WindowSelectionChange", handleApiEvent);
     inst.ApiEvent.AddApiEventListener("CurrentPageChange", (data) => {
       console.log("CurrentPageChange: ", data);
       setPageNum(data);
@@ -102,13 +101,12 @@ export default (props: any) => {
     } else {
       setIsTable(false);
     }
-    // batchSetTextArea(
+    // (
     //   inst.Application,
-
     //   page1
     // );
   };
-  useEffect(() => {}, [pageNum]);
+  useEffect(() => { }, [pageNum]);
   const getTable = async () => {
     const table1 = await getTableByIndex(tables, 1);
     const columns = table1.Columns;
@@ -263,6 +261,14 @@ export default (props: any) => {
   const addTextArea = async () => {
     batchSetTextArea(app, fieldList);
   };
+  const pdf2docx = async () => {
+    pdf2Docx().then(res => {
+      debugger
+    }).catch(err => {
+      console.log('格式转换出错', err);
+
+    })
+  }
   return (
     <div className={styles.container}>
       <div
@@ -277,6 +283,7 @@ export default (props: any) => {
         isTable={isTable}
         onTableSubmit={handleTableSubmit}
         addTextArea={addTextArea}
+        pdf2docx={pdf2docx}
       />
     </div>
   );

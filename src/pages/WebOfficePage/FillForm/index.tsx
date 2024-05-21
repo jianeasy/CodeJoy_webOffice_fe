@@ -10,6 +10,7 @@ export default (props: any) => {
     onTableSubmit,
     isTable,
     addTextArea,
+    pdf2docx
   } = props;
 
   return (
@@ -41,6 +42,8 @@ export default (props: any) => {
           ""
         )} */}
         <Button onClick={addTextArea}>添加公文域</Button>
+        <Button onClick={pdf2docx}>pdf转docx</Button>
+
       </div>
     </Fragment>
   );
